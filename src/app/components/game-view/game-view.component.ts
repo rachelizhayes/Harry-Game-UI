@@ -15,6 +15,7 @@ export class GameViewComponent implements OnInit {
   }
 
   backendCall() {
+    console.log('in backend call')
     this.backendApi.getGameState().subscribe( response => {
       console.log(response);
     }, error => {

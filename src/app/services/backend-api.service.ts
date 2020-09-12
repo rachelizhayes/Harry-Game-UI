@@ -9,6 +9,11 @@ export class BackendApiService {
   constructor(private http: HttpClient) { }
 
   getGameState() {
-    return this.http.get('http://localhost:32769/');
+    //points to my local
+    return this.http.get('http://localhost:32776/');
+   
+
+    // points to Cam's desktop
+    // return this.http.get('http://192.168.1.13:5000/');
   }
 }
