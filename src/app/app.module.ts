@@ -36,11 +36,15 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { GameBoardComponent } from './components/game-board/game-board.component';
+import { GameViewComponent } from './components/game-view/game-view.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GameBoardComponent,
+    GameViewComponent
   ],
   imports: [
     BrowserModule,
