@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendApiService } from '../../services/backend-api.service';
 
 @Component({
   selector: 'app-game-view',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private backendApi: BackendApiService) { }
 
   ngOnInit(): void {
+    this.backendCall();
+  }
+
+  backendCall() {
+    this.backendApi.getGameState().subscribe( response => {
+      console.log(response);
+    }, error => {
+      console.error(error);
+    })
   }
 
 }
