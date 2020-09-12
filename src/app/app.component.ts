@@ -1,25 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { AppServiceService } from './app-service.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Harry-Game-UI';
 
-  constructor(private backend:AppServiceService) { }
-  ngOnInit() {
-    this.showConfig();
-  }
+  constructor() { }
 
-  showConfig() {
-    this.backend.getGameState()
-      .subscribe( response => {
-        console.log(response)
-      }, (error => {
-        console.error(error);
-      }));
-  }
 }

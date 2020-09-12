@@ -4,12 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AppServiceService {
+export class BackendApiService {
 
   constructor(private http: HttpClient) { }
 
   getGameState() {
-    return this.http.get('http://192.168.234.1:5000/');
+    return this.http.get('http://localhost:32769/');
   }
 }
-
