@@ -1,0 +1,23 @@
+<div class="rows">
+    <span></span>
+    <!-- Picture of back of hogwarts card goes here -->
+    <div *ngFor="let hogwartsCard of hogwartsCards">
+        <!-- Construction of a hogwarts card goes here -->
+        <mat-card>
+            <mat-card-header [ngClass]="{
+              spell:hogwartsCard.type=='Spell', 
+              item:hogwartsCard.type=='Item', 
+              ally:hogwartsCard.type=='Ally'}">
+                <mat-card-title>{{hogwartsCard.type}}</mat-card-title>
+                <mat-card-subtitle>{{hogwartsCard.name}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{hogwartsCard.description}}</p>
+                <!-- cost goes here -->
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>Buy</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

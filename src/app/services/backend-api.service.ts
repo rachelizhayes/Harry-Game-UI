@@ -10,7 +10,7 @@ export class BackendApiService {
 
   getGameState() {
     //points to my local
-    return this.http.get('http://localhost:32776/');
+    return this.http.get('http://localhost:32773/');
    
 
     // points to Cam's desktop
