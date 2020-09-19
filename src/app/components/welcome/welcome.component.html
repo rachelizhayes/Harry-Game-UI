@@ -1,1 +1,22 @@
-<p>welcome works!</p>
+<div class="center welcome-container">
+    <img src="../../../assets/harry-potter-silver-text.png" alt="Harry Potter" width="40%" height="40%">
+    <form [formGroup]="newGameForm" (ngSubmit)="createGame()">
+        <!-- make game selections here -->
+
+        <mat-form-field appearance="fill">
+            <mat-label>Number of Players</mat-label>
+            <mat-select formControlName="numPlayers">
+                <mat-option *ngFor="let numPlayerOption of numPlayerOptions" [value]="numPlayerOption">
+                    {{numPlayerOption}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p>Selected # of players: {{newGameForm.controls.numPlayers.value}} </p>
+
+
+        <button mat-button type="submit" class="submit-button">Start Game</button>
+    </form>
+</div>
+
+<!-- TODO: Once game is submitted, tell them to click here to go to your game
+   and share this link with friends -->

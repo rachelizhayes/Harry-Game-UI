@@ -1,1 +1,10 @@
-<p>player-selection works!</p>
+<form [formGroup]="playerSelectForm" (ngSubmit)="submitPlayerSelection()">
+    <label id="example-radio-group-label">Select your hero:</label>
+    <mat-radio-group aria-labelledby="player-radio-group-label" class="example-radio-group" formControlName="currentPlayerSelection">
+        <mat-radio-button class="example-radio-button" *ngFor="let player of playerOptions" [value]="player">
+            {{player}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <div>Your player is: {{playerSelectForm.controls.currentPlayerSelection.value}}</div>
+    <button type="submit" mat-button class="submit-button">Submit</button>
+</form>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BackendApiService } from '../../services/backend-api.service';
 
 @Component({
@@ -8,16 +7,11 @@ import { BackendApiService } from '../../services/backend-api.service';
   styleUrls: ['./game-view.component.css']
 })
 export class GameViewComponent implements OnInit {
-  playerSelectForm: FormGroup = this.fb.group({
-    currentPlayerSelection: ['', Validators.compose([Validators.required])]
-  });
-
-  playerOptions: string[] = ['Harry', 'Ron', 'Hermione', 'Neville'];
-  constructor(private fb: FormBuilder, private backendApi: BackendApiService) { }
+  
+  constructor(private backendApi: BackendApiService) { }
 
   ngOnInit(): void {
     this.backendCall();
-    console.log(this.playerSelectForm);
   }
 
   backendCall() {
@@ -27,11 +21,6 @@ export class GameViewComponent implements OnInit {
     }, error => {
       console.error(error);
     })
-  }
-
-  submitPlayerSelection() {
-    // tell svc that player is selected
-    this.playerSelectForm.disable();
   }
 
 }
