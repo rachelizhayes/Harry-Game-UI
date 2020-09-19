@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from 'src/app/models/game.model';
 import { BackendApiService } from 'src/app/services/backend-api.service';
 
 @Component({
@@ -15,9 +16,9 @@ export class LocationComponent implements OnInit {
   ngOnInit(): void {
     this.backendApi.getGameState().subscribe( gameState => {
       console.log(gameState);
-      this.locationName = gameState.location.name;
-      this.locationSlots = gameState.location.totalSlots;
-      this.villainControl = gameState.location.villainControl;
+      // this.locationName = gameState.location.name;
+      // this.locationSlots = gameState.location.totalSlots;
+      // this.villainControl = gameState.location.villainControl;
     })
   }
 
