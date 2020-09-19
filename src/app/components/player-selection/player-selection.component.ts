@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { BackendApiService } from 'src/app/services/backend-api.service';
 
 @Component({
@@ -13,9 +14,11 @@ export class PlayerSelectionComponent implements OnInit {
   });
 
   playerOptions: string[] = ['Harry', 'Ron', 'Hermione', 'Neville'];
-  constructor(private fb: FormBuilder, private backendApi: BackendApiService) { }
+  constructor(private route: ActivatedRoute, private fb: FormBuilder, private backendApi: BackendApiService) { }
 
   ngOnInit(): void {
+    const gameId = this.route.snapshot.paramMap.get('id');
+    console.log(gameId);
   }
 
 

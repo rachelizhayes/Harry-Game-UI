@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BackendApiService } from '../../services/backend-api.service';
 
 @Component({
@@ -8,15 +9,16 @@ import { BackendApiService } from '../../services/backend-api.service';
 })
 export class GameViewComponent implements OnInit {
   
-  constructor(private backendApi: BackendApiService) { }
+  constructor(private route: ActivatedRoute, private backendApi: BackendApiService) { }
 
   ngOnInit(): void {
-    this.backendCall();
+    const gameId = this.route.snapshot.paramMap.get('id');
+    this.backendCall(gameId);
   }
 
-  backendCall() {
+  backendCall(gameId) {
     console.log('in backend call')
-    this.backendApi.getGameState().subscribe( response => {
+    this.backendApi.getGameState(gameId).subscribe( response => {
       console.log(response);
     }, error => {
       console.error(error);

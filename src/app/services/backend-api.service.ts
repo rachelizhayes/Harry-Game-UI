@@ -10,12 +10,13 @@ export class BackendApiService {
 
   constructor(private http: HttpClient) { }
 
-  getGameState() {
-    //points to my local
-    return this.http.get('http://70.120.3.133:5000/game/TEST');
-   
+  getGameState(gameId: number) {
+    const url = 'http://70.120.3.133:5000/game/' + gameId;
+    return this.http.get(url);
+  }
 
-    // points to Cam's desktop
-    // return this.http.get('http://192.168.1.13:5000/');
+  createNewGame(gameConfigs: any) {
+    const url = 'http://70.120.3.133:5000/game';
+    return this.http.post(url, gameConfigs);
   }
 }

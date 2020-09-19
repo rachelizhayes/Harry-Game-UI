@@ -7,8 +7,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' }, 
   { path: 'welcome', component: WelcomeComponent},
-  { path: 'player-selection', component: PlayerSelectionComponent},
-  { path: 'game', component: GameViewComponent }
+  { path: 'player-selection/:id', component: PlayerSelectionComponent},
+  { path: 'game/:id', component: GameViewComponent }
 ];
 
 @NgModule({

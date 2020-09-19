@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BackendApiService } from 'src/app/services/backend-api.service';
 
 @Component({
@@ -17,7 +18,9 @@ export class WelcomeComponent implements OnInit {
   numLocationOptions: number[] = [2,3,4,5];
   numVillainOptions: number[] = [5,6,7,8,9,10,11,12];
 
-  constructor(private fb: FormBuilder, private backendApi: BackendApiService) { }
+  constructor(private fb: FormBuilder, 
+    private backendApi: BackendApiService, 
+    private router: Router) { }
 
 
   ngOnInit(): void {
@@ -25,8 +28,12 @@ export class WelcomeComponent implements OnInit {
 
   createGame() {
     // TODO: make post call to game endpoint here and show the id later
-    // this.newGameForm.disable();
-    console.log(this.newGameForm.controls);
+    this.newGameForm.disable();
+    this.backendApi.createNewGame(this.newGameForm.value).subscribe( game => {
+      console.log(game);
+      const gameId = game ? game.id : null;
+      this.router.navigate(['player-selection', gameId ]);
+    })
   }
 
 }
