@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SELECT_PANEL_INDENT_PADDING_X } from '@angular/material/select';
 import { ActivatedRoute } from '@angular/router';
 import { BackendApiService } from 'src/app/services/backend-api.service';
-
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-player-selection',
@@ -19,11 +19,12 @@ export class PlayerSelectionComponent implements OnInit {
   playerDict = new Map<string, string>();
   constructor(private route: ActivatedRoute, private fb: FormBuilder, private backendApi: BackendApiService) { }
  
-
   ngOnInit(): void {
     const gameId = this.route.snapshot.paramMap.get('id');
     console.log(gameId);
     this.updatePlayerSelection()
+    const source = interval(1000);
+    const subscribe = source.subscribe(val => this.updatePlayerSelection());
   }
 
   updatePlayerSelection(){
@@ -53,4 +54,3 @@ export class PlayerSelectionComponent implements OnInit {
   }
 
 }
-
