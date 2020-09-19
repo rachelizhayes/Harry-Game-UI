@@ -16,7 +16,8 @@ export class GameBoardComponent implements OnInit {
   }
 
   makeGameStateCall() {
-    this.backendApi.getGameState().subscribe( response => {
+    // TODO update this to be dynamic
+    this.backendApi.getGameState(123).subscribe( response => {
       this.gameState = response;
     })
   }

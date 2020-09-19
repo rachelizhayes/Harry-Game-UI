@@ -15,7 +15,7 @@ export class BackendApiService {
     return this.http.get(url);
   }
 
-  createNewGame(gameConfigs: any) {
+  createNewGame(gameConfigs: any): any {
     const url = 'http://70.120.3.133:5000/game';
     return this.http.post(url, gameConfigs);
   }

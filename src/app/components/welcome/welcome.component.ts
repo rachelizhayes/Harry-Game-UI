@@ -27,11 +27,11 @@ export class WelcomeComponent implements OnInit {
   }
 
   createGame() {
-    // TODO: make post call to game endpoint here and show the id later
+    // TODO: pop up dialogue saying join and share link with friends
     this.newGameForm.disable();
     this.backendApi.createNewGame(this.newGameForm.value).subscribe( game => {
       console.log(game);
-      const gameId = game ? game.id : null;
+      const gameId = game.id ? game.id : null;
       this.router.navigate(['player-selection', gameId ]);
     })
   }

@@ -14,7 +14,8 @@ export class LocationComponent implements OnInit {
   constructor(private backendApi: BackendApiService) { }
 
   ngOnInit(): void {
-    this.backendApi.getGameState().subscribe( gameState => {
+     // TODO update this to be dynamic
+    this.backendApi.getGameState(123).subscribe( gameState => {
       console.log(gameState);
       // this.locationName = gameState.location.name;
       // this.locationSlots = gameState.location.totalSlots;
