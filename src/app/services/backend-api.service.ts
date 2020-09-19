@@ -10,7 +10,7 @@ export class BackendApiService {
 
   getGameState() {
     //points to my local
-    return this.http.get('http://localhost:32773/');
+    return this.http.get('http://192.168.1.13:5000/game/TEST');
    
 
     // points to Cam's desktop
