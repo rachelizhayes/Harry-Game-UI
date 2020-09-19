@@ -1,6 +1,6 @@
 <div class="center welcome-container">
     <img src="../../../assets/harry-potter-silver-text.png" alt="Harry Potter" width="40%" height="40%">
-    <form [formGroup]="newGameForm" (ngSubmit)="createGame()">
+    <form [formGroup]="newGameForm" (ngSubmit)="createGame()" class="columns">
         <!-- make game selections here -->
 
         <mat-form-field appearance="fill">
@@ -11,8 +11,24 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <p>Selected # of players: {{newGameForm.controls.numPlayers.value}} </p>
 
+        <mat-form-field appearance="fill">
+            <mat-label>Number of Locations</mat-label>
+            <mat-select formControlName="numLocations">
+                <mat-option *ngFor="let numLocationOption of numLocationOptions" [value]="numLocationOption">
+                    {{numLocationOption}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Number of Villains</mat-label>
+            <mat-select formControlName="numVillains">
+                <mat-option *ngFor="let numVillainOption of numVillainOptions" [value]="numVillainOption">
+                    {{numVillainOption}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
         <button mat-button type="submit" class="submit-button">Start Game</button>
     </form>

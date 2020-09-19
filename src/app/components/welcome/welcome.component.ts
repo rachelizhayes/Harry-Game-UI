@@ -15,7 +15,7 @@ export class WelcomeComponent implements OnInit {
   });
   numPlayerOptions: number[] = [2,3,4,5];
   numLocationOptions: number[] = [2,3,4,5];
-  numVillainOptions: number[] = [2,3,4,5];
+  numVillainOptions: number[] = [5,6,7,8,9,10,11,12];
 
   constructor(private fb: FormBuilder, private backendApi: BackendApiService) { }
 
