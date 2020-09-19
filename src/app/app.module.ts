@@ -47,6 +47,7 @@ import { VillainsComponent } from './components/villains/villains.component';
 import { PlayerBoardComponent } from './components/player-board/player-board.component';
 import { PlayerSelectionComponent } from './components/player-selection/player-selection.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -98,7 +99,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     MatSortModule,
     MatPaginatorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
