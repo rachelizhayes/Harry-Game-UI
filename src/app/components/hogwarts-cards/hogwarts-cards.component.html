@@ -1,15 +1,15 @@
 <div class="rows">
     <span></span>
     <!-- Picture of back of hogwarts card goes here -->
-    <div *ngFor="let hogwartsCard of hogwartsCards">
+    <div *ngFor="let hogwartsCard of hogwartsCards" class="card-container">
         <!-- Construction of a hogwarts card goes here -->
-        <mat-card>
+        <mat-card class="hogwarts-card">
             <mat-card-header [ngClass]="{
               spell:hogwartsCard.type=='Spell', 
               item:hogwartsCard.type=='Item', 
               ally:hogwartsCard.type=='Ally'}">
-                <mat-card-title>{{hogwartsCard.type}}</mat-card-title>
-                <mat-card-subtitle>{{hogwartsCard.name}}</mat-card-subtitle>
+                <mat-card-title>{{hogwartsCard.name}}</mat-card-title>
+                <mat-card-subtitle>{{hogwartsCard.type}}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
                 <p>{{hogwartsCard.description}}</p>

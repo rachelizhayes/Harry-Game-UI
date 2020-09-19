@@ -39,6 +39,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { GameBoardComponent } from './components/game-board/game-board.component';
 import { GameViewComponent } from './components/game-view/game-view.component';
 import { HogwartsCardsComponent } from './components/hogwarts-cards/hogwarts-cards.component';
+import { LocationComponent } from './components/location/location.component';
+import { DarkArtCardComponent } from './components/dark-art-card/dark-art-card.component';
+import { EncounterComponent } from './components/encounter/encounter.component';
+import { VillainsComponent } from './components/villains/villains.component';
 
 
 @NgModule({
@@ -46,7 +50,11 @@ import { HogwartsCardsComponent } from './components/hogwarts-cards/hogwarts-car
     AppComponent,
     GameBoardComponent,
     GameViewComponent,
-    HogwartsCardsComponent
+    HogwartsCardsComponent,
+    LocationComponent,
+    DarkArtCardComponent,
+    EncounterComponent,
+    VillainsComponent
   ],
   imports: [
     BrowserModule,
