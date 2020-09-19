@@ -5,4 +5,5 @@ export class Villain {
     name: String;
     totalCoins: number;
     totalHealth: number;
+    id: number;
 }

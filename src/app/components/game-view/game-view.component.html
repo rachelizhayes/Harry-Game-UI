@@ -1,10 +1,22 @@
 <!-- UI Page for showing all things related to the currently in progress game -->
+<form [formGroup]="playerSelectForm" (ngSubmit)="submitPlayerSelection()">
+    <label id="example-radio-group-label">Select your hero:</label>
+    <mat-radio-group aria-labelledby="player-radio-group-label" class="example-radio-group" formControlName="currentPlayerSelection">
+        <mat-radio-button class="example-radio-button" *ngFor="let player of playerOptions" [value]="player">
+            {{player}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <div>Your player is: {{playerSelectForm.controls.currentPlayerSelection.value}}</div>
+    <button type="submit">Submit</button>
+</form>
+
+
 <div class="columns" style="padding: 2%;">
     <div class="rows">
         <app-game-board></app-game-board>
-        <span>other player mini health goes here</span>
+        <app-player-board [currentPlayerBoard]=false></app-player-board>
     </div>
     <div>
-        <span>current player health</span>
+        <app-player-board [currentPlayerBoard]=true></app-player-board>
     </div>
 </div>

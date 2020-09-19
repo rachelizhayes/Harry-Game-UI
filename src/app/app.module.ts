@@ -36,6 +36,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GameBoardComponent } from './components/game-board/game-board.component';
 import { GameViewComponent } from './components/game-view/game-view.component';
 import { HogwartsCardsComponent } from './components/hogwarts-cards/hogwarts-cards.component';
@@ -43,6 +44,9 @@ import { LocationComponent } from './components/location/location.component';
 import { DarkArtCardComponent } from './components/dark-art-card/dark-art-card.component';
 import { EncounterComponent } from './components/encounter/encounter.component';
 import { VillainsComponent } from './components/villains/villains.component';
+import { PlayerBoardComponent } from './components/player-board/player-board.component';
+import { PlayerSelectionComponent } from './components/player-selection/player-selection.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 
 @NgModule({
@@ -54,7 +58,10 @@ import { VillainsComponent } from './components/villains/villains.component';
     LocationComponent,
     DarkArtCardComponent,
     EncounterComponent,
-    VillainsComponent
+    VillainsComponent,
+    PlayerBoardComponent,
+    PlayerSelectionComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +96,9 @@ import { VillainsComponent } from './components/villains/villains.component';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

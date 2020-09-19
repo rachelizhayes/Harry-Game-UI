@@ -11,6 +11,7 @@ export class GameBoardComponent implements OnInit {
   constructor(private backendApi: BackendApiService) { }
 
   ngOnInit(): void {
+    this.makeGameStateCall();
    
   }
 
