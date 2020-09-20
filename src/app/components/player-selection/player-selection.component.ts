@@ -4,6 +4,7 @@ import { SELECT_PANEL_INDENT_PADDING_X } from '@angular/material/select';
 import { ActivatedRoute } from '@angular/router';
 import { BackendApiService } from 'src/app/services/backend-api.service';
 import { interval } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-player-selection',
@@ -17,7 +18,7 @@ export class PlayerSelectionComponent implements OnInit {
 
   playerOptions: string[] = [];
   playerDict = new Map<string, string>();
-  constructor(private route: ActivatedRoute, private fb: FormBuilder, private backendApi: BackendApiService) { }
+  constructor(private route: ActivatedRoute, private fb: FormBuilder, private backendApi: BackendApiService,private router:Router) { }
  
   ngOnInit(): void {
     const gameId = this.route.snapshot.paramMap.get('id');
@@ -37,6 +38,9 @@ export class PlayerSelectionComponent implements OnInit {
         if(!value.Selected){
           this.playerOptions.push(value.Name)
         }
+      }
+      if (this.playerOptions.length < 3){
+        this.router.navigate(['game', gameId ]);
       }
     })
   }
