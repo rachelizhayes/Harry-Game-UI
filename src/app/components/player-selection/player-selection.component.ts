@@ -40,6 +40,7 @@ export class PlayerSelectionComponent implements OnInit {
         }
       }
       if (this.playerOptions.length < 3){
+        
         this.router.navigate(['game', gameId ]);
       }
     })
