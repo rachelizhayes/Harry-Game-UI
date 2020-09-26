@@ -17,8 +17,18 @@
         <p>{{ card.description }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button class="buy-button">
+        <button
+          mat-button
+          class="buy-button"
+          (click)="buyHogwartsCard(card.id)"
+        >
           {{ card.value }}
+          <img
+            src="../../../assets/coin.png"
+            alt="Coin"
+            width="20px"
+            height="20px"
+          />
           <!-- image of coin goes here -->
         </button>
       </mat-card-actions>

@@ -10,4 +10,9 @@ export class HogwartsCardsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  buyHogwartsCard(id: number) {
+    console.log('Buying card ' + id);
+    // TODO make call to svc to buy card
+  }
 }
