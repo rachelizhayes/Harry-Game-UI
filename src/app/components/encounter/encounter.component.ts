@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-encounter',
   templateUrl: './encounter.component.html',
-  styleUrls: ['./encounter.component.css']
+  styleUrls: ['./encounter.component.css'],
 })
 export class EncounterComponent implements OnInit {
+  @Input() encounter;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
