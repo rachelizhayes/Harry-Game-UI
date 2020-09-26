@@ -1,4 +1,4 @@
 export class DarkArt {
-    current: String;
-    total: any;
+  current: string;
+  total: any;
 }

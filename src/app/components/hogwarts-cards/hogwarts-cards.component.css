@@ -1,22 +1,20 @@
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .hogwarts-card {
-    color: white;
-    background-color: #E0BE90;
-    /* flex: 0 0 33.333333%; */
+  color: white;
+  background-color: #e0be90;
 }
 
 .spell {
-    background-color: #862627;
+  background-color: #862627;
 }
 
 .item {
-    background-color: #D7C152;
+  background-color: #d7c152;
 }
 
 .ally {
-    background-color: #375DA6;
+  background-color: #375da6;
+}
+
+.buy-button {
+  background-color: #595450;
 }

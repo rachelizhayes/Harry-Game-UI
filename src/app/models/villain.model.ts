@@ -1,9 +1,9 @@
 export class Villain {
-    assignedCoins: String;
-    assignedLightning: number;
-    description: String;
-    name: String;
-    totalCoins: number;
-    totalHealth: number;
-    id: number;
+  assignedCoins: string;
+  assignedLightning: number;
+  description: string;
+  name: string;
+  totalCoins: number;
+  totalHealth: number;
+  id: number;
 }

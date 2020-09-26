@@ -1,44 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 html,
 body {
-    height: 100%;
-    margin: 0%;
-    padding: 0%;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
 }
 
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .rows {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .columns {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 mat-card {
-    border-radius: 10px!important;
+  padding: 0px !important;
 }
 
+/* How to round card edges
+mat-card {
+    border-radius: 10px!important;
+} */
+
 .submit-button {
-    background-color: white;
-    color: blue;
+  background-color: white;
+  color: blue;
 }

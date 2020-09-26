@@ -1,12 +1,18 @@
-<div>
-    <mat-card class="location-card">
-        <mat-card-header class="location-card-header">
-            {{locationName}}
-        </mat-card-header>
-        <mat-card-content class="row center">
-            {{villainControl}} / {{locationSlots}}
-            <img src="../../../assets/villain-control.png" alt="Villain control for location" width="20px" height="20px">
-        </mat-card-content>
-
-    </mat-card>
+<div style="width: 100%">
+  <mat-card class="location-card">
+    <mat-card-header class="location-card-header">
+      <p>{{ locationName }}</p>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+      <p>
+        {{ villainControl }} / {{ locationSlots }}
+        <img
+          src="../../../assets/villain-control.png"
+          alt="Villain control for location"
+          width="20px"
+          height="20px"
+        />
+      </p>
+    </mat-card-content>
+  </mat-card>
 </div>

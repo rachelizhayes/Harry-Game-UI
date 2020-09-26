@@ -1,5 +1,5 @@
 export class Location {
-    name: String;
-    totalSlots: number;
-    villainControl: number;
+  name: string;
+  totalSlots: number;
+  villainControl: number;
 }

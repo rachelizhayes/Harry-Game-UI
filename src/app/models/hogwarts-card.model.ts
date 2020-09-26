@@ -1,7 +1,7 @@
 export class HogwartsCard {
-    description: String;
-    id: number;
-    name: String;
-    type: String;
-    value: number;
+  description: string;
+  id: number;
+  name: string;
+  type: string;
+  value: number;
 }

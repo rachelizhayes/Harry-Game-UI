@@ -1,4 +1,4 @@
 export class Encounter {
-    description: String;
-    name: String;
+  description: string;
+  name: string;
 }

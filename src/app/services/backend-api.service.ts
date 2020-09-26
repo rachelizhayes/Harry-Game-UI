@@ -6,13 +6,12 @@ import { strict } from 'assert';
 import { JsonPipe } from '@angular/common';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BackendApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getGameState(gameId: number) {
+  getGameState(gameId: number): any {
     const url = 'http://70.120.3.133:5000/game/' + gameId;
     return this.http.get(url);
   }
@@ -22,19 +21,16 @@ export class BackendApiService {
     return this.http.post(url, gameConfigs);
   }
 
-  getChosenPlayers(gameId: any): any{
-    const url = 'http://70.120.3.133:5000/game/' + gameId +"/playerOptions" ;
+  getChosenPlayers(gameId: any): any {
+    const url = 'http://70.120.3.133:5000/game/' + gameId + '/playerOptions';
     return this.http.get(url);
   }
-  submitChosenPlayers(gameId: any, id: any):any{
-    const url = 'http://70.120.3.133:5000/game/' + gameId +"/playerOptions" ;
+  submitChosenPlayers(gameId: any, id: any): any {
+    const url = 'http://70.120.3.133:5000/game/' + gameId + '/playerOptions';
     var jsonObj = {};
-    jsonObj["playerId"] = id;
-    jsonObj["ability"] = 1;
-    jsonObj["proficiency"] = 1;
+    jsonObj['playerId'] = id;
+    jsonObj['ability'] = 1;
+    jsonObj['proficiency'] = 1;
     return this.http.post(url, jsonObj);
   }
-
-
-
 }

@@ -1,19 +1,28 @@
-<div class="columns board-game-container" fxFlex="100">
-    <div style="padding: 2%;" fxFlex="67">
-        <div class="rows" style="padding: 2%;">
-            <app-location></app-location>
-            <!-- Dark art card cover pic goes here -->
-            <app-dark-art-card></app-dark-art-card>
-        </div>
-        <div class="rows" style="padding: 2%;">
-            <!-- Villain card cover pic goes here -->
-            <app-encounter></app-encounter>
-        </div>
-        <div class="rows" style="padding: 2%;">
-            <app-villains></app-villains>
-        </div>
+<div class="rows board-game-container" fxFlex="100">
+  <div style="padding: 2%" fxFlex="67">
+    <div class="rows" style="padding: 2%">
+      <app-location
+        [gameId]="gameId"
+        style="flex: 1 1 100%"
+        fxFlex="20"
+      ></app-location>
+      <img
+        src="../../../assets/dark-art-event.jpg"
+        alt="Dark art event"
+        height="30%"
+        width="30%"
+      />
+      <app-dark-art-card style="flex: 1 1 100%" fxFlex="40"></app-dark-art-card>
     </div>
-    <div fxFlex="33">
-        <app-hogwarts-cards></app-hogwarts-cards>
+    <div class="rows" style="padding: 2%">
+      <!-- Villain card cover pic goes here -->
+      <app-encounter></app-encounter>
     </div>
+    <div class="rows" style="padding: 2%">
+      <app-villains></app-villains>
+    </div>
+  </div>
+  <div fxFlex="33">
+    <app-hogwarts-cards [cards]="gameState?.hogwartsCards"></app-hogwarts-cards>
+  </div>
 </div>

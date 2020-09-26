@@ -1,23 +1,27 @@
-<div class="rows">
-    <span></span>
-    <!-- Picture of back of hogwarts card goes here -->
-    <div *ngFor="let hogwartsCard of hogwartsCards" class="card-container">
-        <!-- Construction of a hogwarts card goes here -->
-        <mat-card class="hogwarts-card">
-            <mat-card-header [ngClass]="{
-              spell:hogwartsCard.type=='Spell', 
-              item:hogwartsCard.type=='Item', 
-              ally:hogwartsCard.type=='Ally'}">
-                <mat-card-title>{{hogwartsCard.name}}</mat-card-title>
-                <mat-card-subtitle>{{hogwartsCard.type}}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                <p>{{hogwartsCard.description}}</p>
-                <!-- cost goes here -->
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button>Buy</button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
+<div fxLayout="row wrap" fxLayoutGap="5px grid">
+  <!-- Picture of back of hogwarts card goes here -->
+  <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let card of cards">
+    <!-- Construction of a hogwarts card goes here -->
+    <mat-card class="hogwarts-card">
+      <mat-card-header
+        [ngClass]="{
+          spell: card.type == 'Spell',
+          item: card.type == 'Item',
+          ally: card.type == 'Ally'
+        }"
+      >
+        <mat-card-title>{{ card.name }}</mat-card-title>
+        <mat-card-subtitle>{{ card.type }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ card.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button class="buy-button">
+          {{ card.value }}
+          <!-- image of coin goes here -->
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>
