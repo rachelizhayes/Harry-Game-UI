@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-villains',
   templateUrl: './villains.component.html',
-  styleUrls: ['./villains.component.css']
+  styleUrls: ['./villains.component.css'],
 })
 export class VillainsComponent implements OnInit {
-
+  @Input() villains;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.villains);
   }
-
 }
