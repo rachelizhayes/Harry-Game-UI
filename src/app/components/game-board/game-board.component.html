@@ -1,24 +1,11 @@
 <div class="rows board-game-container" fxFlex="100">
   <div style="padding: 2%" fxFlex="67">
-    <div class="rows" style="padding: 2%">
-      <app-location
-        [gameId]="gameId"
-        style="flex: 1 1 100%"
-        fxFlex="20"
-      ></app-location>
-      <img
-        src="../../../assets/dark-art-event.jpg"
-        alt="Dark art event"
-        height="30%"
-        width="30%"
-      />
-      <app-dark-art-card style="flex: 1 1 100%" fxFlex="40"></app-dark-art-card>
+    <div class="rows" fxLayoutGap="5px grid">
+      <app-location [gameId]="gameId" style="flex: 1 1 100%" fxFlex="30"></app-location>
+      <img src="../../../assets/dark-art-event.jpg" alt="Dark art event" height="30%" width="30%" />
+      <app-encounter [encounter]="gameState?.encounter" fxFlex="30"></app-encounter>
     </div>
-    <div class="rows" style="padding: 2%">
-      <!-- Villain card cover pic goes here -->
-      <app-encounter [encounter]="gameState?.encounter"></app-encounter>
-    </div>
-    <div class="rows" style="padding: 2%">
+    <div>
       <app-villains [villains]="gameState?.villains"></app-villains>
     </div>
   </div>
