@@ -1,32 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
-import { Game } from '../models/game.model';
-import { strict } from 'assert';
-import { JsonPipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BackendApiService {
-  constructor(private http: HttpClient) {}
+  domain: string = 'http://198.199.74.215:2375';
+
+  constructor(private http: HttpClient) { }
 
   getGameState(gameId: number): any {
-    const url = 'http://70.120.3.133:5000/game/' + gameId;
+    const url = this.domain + '/game/' + gameId;
     return this.http.get(url);
   }
 
   createNewGame(gameConfigs: any): any {
-    const url = 'http://70.120.3.133:5000/game';
+    const url = this.domain + '/game';
     return this.http.post(url, gameConfigs);
   }
 
   getChosenPlayers(gameId: any): any {
-    const url = 'http://70.120.3.133:5000/game/' + gameId + '/playerOptions';
+    const url = this.domain + '/game/' + gameId + '/playerOptions';
     return this.http.get(url);
   }
   submitChosenPlayers(gameId: any, id: any): any {
-    const url = 'http://70.120.3.133:5000/game/' + gameId + '/playerOptions';
+    const url = this.domain + '/game/' + gameId + '/playerOptions';
     var jsonObj = {};
     jsonObj['playerId'] = id;
     jsonObj['ability'] = 1;

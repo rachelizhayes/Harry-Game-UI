@@ -1,6 +1,54 @@
-<div *ngIf="!currentPlayerBoard">
-    <span>other player health goes here</span>
+<div *ngFor="let player of playerInfo; let i;">
+    <mat-card>
+        <div>{{player?.name}}</div>
+        <div fxLayout="row" fxLayoutAlign="start start">
+            <img src='{{ "../../../assets/" + getPicName(i) + ".jpg" }}' alt="Character picture" width="60px"
+                height="60px" />
+            <div fxLayout="column" class="player-stats">
+                <div>{{player?.lightning}} <img src="../../../assets/lightning-bolt.jpg" alt="Lightning bolt"
+                        width="20px" height="20px" /></div>
+                <div>{{player?.coins}} <img src="../../../assets/coin.png" alt="Coin" width="20px" height="20px" />
+                </div>
+                <div> {{player?.health}} <img src="../../../assets/heart.png" alt="Health" width="20px" height="20px" />
+                </div>
+            </div>
+            <div>
+                {{player?.proficiency.title}} <br>
+                {{player?.proficiency.description}}
+            </div>
+            <div>
+                {{player?.ability.title}} <br>
+                {{player?.ability.description}}
+            </div>
+            <div *ngFor="ability of earnedAbilites; let i;">
+                {{player?.earnedAbilites[i].title}} <br>
+                {{player?.earnedAbilites[i].description}}
+            </div>
+        </div>
+        <div>
+            <app-hogwarts-cards [cards]="getPlayerCards(i)"></app-hogwarts-cards>
+        </div>
+    </mat-card>
 </div>
-<div *ngIf="currentPlayerBoard">
-    <span>current player health goes here</span>
-</div>
+
+<!-- {
+    "ability": {
+      "description": "Once Per game", 
+      "title": "Third Task"
+    }, 
+    "coins": 0, 
+    "discardEmpty": true, 
+    "drawPileEmpty": false, 
+    "earnedAbilites": null, 
+    "hand": [], 
+    "health": 10, 
+    "lightning": 0, 
+    "name": [
+      "Harry"
+    ], 
+    "proficiency": {
+      "description": "Once per turn, discard 5 coins", 
+      "title": "Flying Lessons"
+    }, 
+    "topPlayed": false
+  }, -->

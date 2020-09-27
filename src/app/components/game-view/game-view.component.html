@@ -2,9 +2,9 @@
 <div class="columns" style="padding: 2%;">
     <div class="rows">
         <app-game-board></app-game-board>
-        <app-player-board [currentPlayerBoard]=false></app-player-board>
+        <app-player-board [playerInfo]="otherPlayers"></app-player-board>
     </div>
     <div>
-        <app-player-board [currentPlayerBoard]=true></app-player-board>
+        <app-player-board [playerInfo]="currentPlayer"></app-player-board>
     </div>
 </div>
